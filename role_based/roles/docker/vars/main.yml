@@ -1,2 +1,4 @@
 ---
 # vars file for docker
+image:
+  name: mkarakas/simple-rest

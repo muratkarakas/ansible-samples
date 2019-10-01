@@ -31,6 +31,6 @@
   shell: docker container prune -f
   ignore_errors: True
 
-- name: start sample container
-  shell: docker run -d mkarakas/simple-rest
+- name: start sample container from image {{ image.name }}
+  shell: docker run -d {{ image.name }}
   ignore_errors: True
