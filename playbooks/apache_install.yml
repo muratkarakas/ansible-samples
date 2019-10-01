@@ -1,0 +1,38 @@
+---
+
+- import_playbook: common.yml
+
+
+- hosts: servers
+  vars:
+    html_title: Murat Karakas
+    path: html
+  remote_user: root
+  tasks:
+  - name: ensure apache is at the latest version
+    become: true
+    yum:
+      name: apache2
+      state: latest
+  - name: Copy js file
+    become: true
+    copy: src=html/demo.js dest=/var/www/{{ path }} owner=root group=root mode=0644   
+
+  - name: write the apache sample html file to  /var/www/{{ path }}
+    become: true
+    template:
+      src: html/demo.html
+      dest: /var/www/{{ path }}/demo.html
+    notify:
+    - restart apache
+
+  - name: ensure apache is running
+    service:
+      name: apache2
+      state: started
+  handlers:
+    - name: restart apache
+      become: true
+      service:
+        name: apache2
+        state: restarted

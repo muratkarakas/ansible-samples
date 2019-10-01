@@ -1,0 +1,10 @@
+ansible servers -m apt -a "name=curl state=present"
+
+ansible-playbook playbooks/apache_install.yml 
+
+
+ansible-playbook playbooks/docker_install.yml 
+
+or
+
+ansible-playbook -i hosts site.yml
