@@ -7,7 +7,7 @@
   tasks:
   - name: Install docker
     become: true
-    apt:
+    package:
        name: docker.io
   - name: Ensure group "docker" exists
     group:
