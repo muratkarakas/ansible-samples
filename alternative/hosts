@@ -1,0 +1,4 @@
+
+[apacheservers]
+192.168.1.18 ansible_user=eteration ansible_password=password ansible_become_pass=password
+192.168.1.214 ansible_user=eteration ansible_password=password ansible_become_pass=password
