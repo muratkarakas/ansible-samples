@@ -1,3 +1,6 @@
+remote server => vi .ssh/authorized_keys
+
+
 ansible servers -m apt -a "name=curl state=present"
 
 ansible-playbook playbooks/apache_install.yml 
