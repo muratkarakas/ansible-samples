@@ -2,5 +2,5 @@
 control ansible_connection=local
 
 [server]
-your-server-ip ansible_user=ubuntu  ansible_python_interpreter=/usr/bin/python3
+3.15.157.184 ansible_user=ubuntu  ansible_python_interpreter=/usr/bin/python3
 
